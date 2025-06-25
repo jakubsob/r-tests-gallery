@@ -1,0 +1,9 @@
+Package: plumber-test
+Version: 0.1.0
+Imports:
+  httr2,
+  mirai,
+  pingr,
+  plumber,
+  purrr,
+  testthat

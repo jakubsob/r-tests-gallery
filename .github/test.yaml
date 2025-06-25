@@ -1,0 +1,29 @@
+name: 'Run tests'
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  plumber:
+    name: plumber
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          working-directory: plumber
+
+      - name: Setup R dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          working-directory: plumber
+
+      - name: Test
+        run: testthat::test_local()
+        shell: Rscript
+        with:
+          working-directory: plumber
