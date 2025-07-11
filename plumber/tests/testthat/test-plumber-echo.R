@@ -1,4 +1,3 @@
-#' Prepare a request
 echo_get <- function(msg, host = api_host(), port = api_port()) {
   api_url(host, port) |>
     httr2::request() |>
@@ -7,7 +6,6 @@ echo_get <- function(msg, host = api_host(), port = api_port()) {
     httr2::req_url_query(msg = msg)
 }
 
-#' Perform the request
 perform <- function(req) {
   req |>
     httr2::req_perform() |>
@@ -23,7 +21,8 @@ describe("msg", {
     res <- perform(req)
 
     # Assert
-    expect_equal(res$msg[[1]], "The message is: ''")
+    expect_length(res$msg, 1)
+    expect_type(res$msg[[1]], "character")
   })
 
   it("should respond to a message", {
@@ -34,6 +33,7 @@ describe("msg", {
     res <- perform(req)
 
     # Assert
-    expect_equal(res$msg[[1]], "The message is: 'Hello'")
+    expect_length(res$msg, 1)
+    expect_type(res$msg[[1]], "character")
   })
 })

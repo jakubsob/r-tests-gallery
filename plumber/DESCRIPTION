@@ -4,6 +4,7 @@ Imports:
   httr2,
   mirai,
   pingr,
+  pkgload,
   plumber,
   purrr,
   testthat
