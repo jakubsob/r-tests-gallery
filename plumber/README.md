@@ -2,7 +2,7 @@
 
 ## When to use this pattern?
 
-Use this pattern to a [Plumber](https://www.rplumber.io/) API you own.
+Use this pattern to test a [Plumber](https://www.rplumber.io/) API you own.
 
 ## How this pattern works?
 
