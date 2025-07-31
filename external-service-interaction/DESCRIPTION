@@ -1,0 +1,8 @@
+Package: external-service-interaction-test
+Version: 0.1.0
+Imports:
+  ellmer,
+  pkgload,
+  R6,
+  testthat
+Config/testthat/edition: 3
